@@ -1,0 +1,2 @@
+/// This is a class which is an implementation of `StateNotifier`. 
+/// This will be the core of our state management, since this is where we define the methods that will be in-charge of changing and emitting the new states when necessary.
