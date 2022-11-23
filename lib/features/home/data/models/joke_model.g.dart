@@ -6,26 +6,15 @@ part of 'joke_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-JokeModel _$JokeModelFromJson(Map<String, dynamic> json) => JokeModel(
-      safe: json['safe'] as bool,
-      category: json['category'] as String?,
+_$_JokeModel _$$_JokeModelFromJson(Map<String, dynamic> json) => _$_JokeModel(
       delivery: json['delivery'] as String?,
-      flags: json['flags'] == null
-          ? null
-          : FlagsModel.fromJson(json['flags'] as Map<String, dynamic>),
       id: json['id'] as int?,
-      lang: json['lang'] as String?,
       setup: json['setup'] as String?,
-      type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$JokeModelToJson(JokeModel instance) => <String, dynamic>{
-      'category': instance.category,
+Map<String, dynamic> _$$_JokeModelToJson(_$_JokeModel instance) =>
+    <String, dynamic>{
       'delivery': instance.delivery,
-      'flags': instance.flags,
       'id': instance.id,
-      'lang': instance.lang,
-      'safe': instance.safe,
       'setup': instance.setup,
-      'type': instance.type,
     };

@@ -1,46 +1,15 @@
-import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:riverpod_api/features/home/data/models/flag_model.dart';
 
+part 'joke_model.freezed.dart';
 part 'joke_model.g.dart';
 
-@JsonSerializable()
-class JokeModel extends Equatable {
-  const JokeModel({
-    required this.safe,
-    this.category,
-    this.delivery,
-    this.flags,
-    this.id,
-    this.lang,
-    this.setup,
-    this.type,
-  });
-
-  //Json Serializable
+@freezed
+class JokeModel with _$JokeModel {
+  const factory JokeModel({
+    String? delivery,
+    int? id,
+    String? setup,
+  }) = _JokeModel;
   factory JokeModel.fromJson(Map<String, dynamic> json) =>
       _$JokeModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$JokeModelToJson(this);
-
-  final String? category;
-  final String? delivery;
-  final FlagsModel? flags;
-  final int? id;
-  final String? lang;
-  final bool safe;
-  final String? setup;
-  final String? type;
-
-  @override
-  List<Object?> get props => [
-        category,
-        delivery,
-        flags,
-        id,
-        lang,
-        safe,
-        setup,
-        type,
-      ];
 }
