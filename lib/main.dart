@@ -25,13 +25,15 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      home: const HomePage(),
-      initialRoute: Routes.home,
-      routes: AppRoutes.routes,
+    return ScreenUtilInit(
+      builder: (context, child) => MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        home: const HomePage(),
+        initialRoute: Routes.home,
+        routes: AppRoutes.routes,
+      ),
     );
   }
 }
